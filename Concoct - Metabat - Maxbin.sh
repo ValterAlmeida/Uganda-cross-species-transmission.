@@ -1,4 +1,4 @@
-# Concoct
+# Concoct - Metabat - Maxbin
 
 #!/bin/bash -e
 #SBATCH -A massey03212
