@@ -1,19 +1,18 @@
 # CheckM
 
 #!/bin/bash -e
-#SBATCH -A massey03212
-#SBATCH -J checkM_Hum_Unwell
-#SBATCH --time 00:30:00
-#SBATCH --mem 10GB
-#SBATCH --ntasks 1
-#SBATCH --cpus-per-task 12
-#SBATCH -e checkM_Hum_Unwell.err
-#SBATCH -o checkM_Hum_Unwell.out
-#SBATCH --export NONE
+#SBATCH --account       massey03212
+#SBATCH --job-name      CheckM_GW
+#SBATCH --time          05:00:00
+#SBATCH --mem           64GB
+#SBATCH --cpus-per-task 16
+#SBATCH --error         %x_%j.err
+#SBATCH --output        %x_%j.out
 
 module purge
-module load CheckM/1.0.13-gimkl-2018b-Python-3.7.3
+module load CheckM/1.0.13-gimkl-2018b-Python-2.7.16
+export PYTHONNOUSERSITE=1
 
-checkm lineage_wf -t 10 --pplacer_threads 10 -x fa \
+checkm lineage_wf -t $SLURM_CPUS_PER_TASK --pplacer_threads $SLURM_CPUS_PER_TASK -x fa \
                   --tab_table -f checkm.txt \
                   dastool_out/_DASTool_bins/ checkm_out/
