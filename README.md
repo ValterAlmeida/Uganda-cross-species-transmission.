@@ -1,2 +1,2 @@
 # Uganda cross-species transmission
- The objectives of this project are to characterize infections within a multi-host system in Uganda, comprised of people, endangered mountain gorillas and livestock (cattle and goats) using shotgun high throughput sequencing and genome assemblies. 
+This project focuses on understanding the ecology of diseases and identifying potential sources of zoonotic spillover. Zoonotic diseases can have severe consequences for public health, and it is important to identify possible pathogens in order to prevent outbreaks.
