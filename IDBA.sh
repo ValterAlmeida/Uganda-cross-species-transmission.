@@ -1,4 +1,4 @@
-IDBA
+# IDBA-UD - Test
 
 #!/bin/bash -e
 #SBATCH -A massey03212
@@ -22,10 +22,7 @@ module load IDBA-UD/1.1.3-gimkl-2018b
 
 for file in *.fastq;
 do
-base=$(basename ${file} .fastq) 
+base=$(basename ${file} .fastq)
 # Run IDBA
 idba_ud --num_threads 8 --mink 33 --maxk 99 --step 22 -l ${base}.fastq -o ${base}
 done
-
-
-Not working yet
