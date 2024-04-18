@@ -1,4 +1,4 @@
-# CheckM
+# CheckM - Genome completeness and contamination
 
 #!/bin/bash -e
 #SBATCH --account       massey03212
