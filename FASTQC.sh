@@ -1,20 +1,16 @@
-FASTQC
+#FastQC - Quality Control
 
 #!/bin/bash -e
-#SBATCH -A massey03212
-#SBATCH -J Fastqc
-#SBATCH --time 8:00:00
-#SBATCH --mem 32GB
-#SBATCH --ntasks 1
+#SBATCH --account       massey03212
+#SBATCH --job-name      FastQC
+#SBATCH --time          4:00:00
+#SBATCH --mem           16GB
 #SBATCH --cpus-per-task 16
-#SBATCH -e fastqc.err
-#SBATCH -o fastqc.out
-#SBATCH --export NONE
-
-export SLURM_EXPORT_ENV=ALL
+#SBATCH --error         %x_%j.err
+#SBATCH --output        %x_%j.out
 
 # Set up working directories
-cd /nesi/nobackup/massey03212/AGRF/AGRF_CAGRF21098330_H3CGTDSX3/trimmomatic_test/script_test
+cd cd /nesi/nobackup/massey03212/
 
 # Load Fastqc
 module purge
@@ -22,4 +18,4 @@ module load FastQC/0.11.9
 
 # Run FastQC
 
-fastqc *.gz -o /nesi/nobackup/massey03212/AGRF/AGRF_CAGRF21098330_H3CGTDSX3/trimmomatic_test/script_test/fastqc_out
+fastqc *.gz -o /nesi/nobackup/massey03212/fastqc_output
