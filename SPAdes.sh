@@ -1,4 +1,4 @@
-#SPAdes
+# SPAdes - Test
 
 
 #!/bin/bash -e
