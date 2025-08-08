@@ -1,21 +1,6 @@
-# dRep
-
-echo "genome,completeness,contamination" > dRep.genomeInfo
-
-cut -f1,12 checkm.txt | sed 's/\t/.fa,/g' > p1.txt
-
-cut -f13 checkm.txt > p2.txt
-
-paste -d "," p1.txt p2.txt | tail -n+2 >> dRep.genomeInfo
-
-rm p*.txt
-
-###################
-
-
 #!/bin/bash -e
 #SBATCH --account       massey03212
-#SBATCH --job-name      dRep_Metageno
+#SBATCH --job-name      dRep_gtdb_2_4
 #SBATCH --time          24:00:00
 #SBATCH --mem           32GB
 #SBATCH --cpus-per-task 16
